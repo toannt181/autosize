@@ -1,4 +1,7 @@
 ## Summary
+Fix textarea "jumpy" in IE10 and IE11
+
+## Summary
 
 Autosize is a small, stand-alone script to automatically adjust textarea height to fit text.
 

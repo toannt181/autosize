@@ -59,7 +59,7 @@
 		};
 	}
 
-	function assign(ta) {
+	function assign(ta, options) {
 		if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' || map.has(ta)) return;
 
 		var heightOffset = null;
@@ -131,7 +131,8 @@
 			var docTop = document.documentElement && document.documentElement.scrollTop; // Needed for Mobile IE (ticket #240)
 
 			ta.style.height = '';
-			ta.style.height = ta.scrollHeight + heightOffset + 'px';
+			var paddingBottomOption = options.paddingBottom || 0;
+			ta.style.height = ta.scrollHeight + heightOffset + paddingBottomOption + 'px';
 
 			// used to check if an update is actually necessary on window.resize
 			clientWidth = ta.clientWidth;

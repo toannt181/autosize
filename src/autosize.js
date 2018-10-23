@@ -37,7 +37,7 @@ try {
 	};
 }
 
-function assign(ta) {
+function assign(ta, options) {
 	if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' || map.has(ta)) return;
 
 	let heightOffset = null;
@@ -108,8 +108,9 @@ function assign(ta) {
 		const overflows = getParentOverflows(ta);
 		const docTop = document.documentElement && document.documentElement.scrollTop; // Needed for Mobile IE (ticket #240)
 
-		ta.style.height = '';
-		ta.style.height = (ta.scrollHeight+heightOffset)+'px';
+    ta.style.height = '';
+    const paddingBottomOption = options.paddingBottom || 0
+		ta.style.height = (ta.scrollHeight+heightOffset+paddingBottomOption)+'px';
 
 		// used to check if an update is actually necessary on window.resize
 		clientWidth = ta.clientWidth;
