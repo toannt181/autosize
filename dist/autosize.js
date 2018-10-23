@@ -1,5 +1,5 @@
 /*!
-	autosize 4.0.2
+	autosize 4.0.3
 	license: MIT
 	http://www.jacklmoore.com/autosize
 */
@@ -131,7 +131,7 @@
 			var docTop = document.documentElement && document.documentElement.scrollTop; // Needed for Mobile IE (ticket #240)
 
 			ta.style.height = '';
-			var paddingBottomOption = options.paddingBottom || 0;
+			var paddingBottomOption = options && options.paddingBottom || 0;
 			ta.style.height = ta.scrollHeight + heightOffset + paddingBottomOption + 'px';
 
 			// used to check if an update is actually necessary on window.resize

@@ -109,7 +109,7 @@ function assign(ta, options) {
 		const docTop = document.documentElement && document.documentElement.scrollTop; // Needed for Mobile IE (ticket #240)
 
     ta.style.height = '';
-    const paddingBottomOption = options.paddingBottom || 0
+    const paddingBottomOption = options && options.paddingBottom || 0
 		ta.style.height = (ta.scrollHeight+heightOffset+paddingBottomOption)+'px';
 
 		// used to check if an update is actually necessary on window.resize
