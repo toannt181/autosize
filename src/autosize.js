@@ -115,10 +115,10 @@ function assign(ta, options) {
 		// used to check if an update is actually necessary on window.resize
 		clientWidth = ta.clientWidth;
 
-		// prevents scroll-position jumping
-		overflows.forEach(el => {
-			el.node.scrollTop = el.scrollTop
-		});
+		// prevents scroll-position Ipad Safari
+		// overflows.forEach(el => {
+		// 	el.node.scrollTop = el.scrollTop
+		// });
 
 		if (docTop) {
 			document.documentElement.scrollTop = docTop;
